@@ -20,10 +20,10 @@ router.get(
         );
         // console.log(req.session.user.userId);
 
-        res.send(photos);
+        res.send(photos.reverse());
       } else {
         const photos = await Photo.find().populate("user");
-        res.send(photos);
+        res.send(photos.reverse());
       }
     } catch (e) {
       console.log(e);
